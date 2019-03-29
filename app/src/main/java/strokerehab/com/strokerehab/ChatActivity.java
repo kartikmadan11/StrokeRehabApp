@@ -6,16 +6,29 @@ import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 import java.util.ArrayList;
 
-public class DoctorSignUpActivity extends AppCompatActivity {
+import strokerehab.com.strokerehab.Utilities.CustomWebViewClient;
+
+public class ChatActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_sign_up);
+        setContentView(R.layout.activity_chat);
         centerTitle();
+
+        WebView mywebview = (WebView) findViewById(R.id.wv_chat_page);
+        mywebview.loadUrl("http://stroke-rehab-chat.herokuapp.com/");
+
+
+        mywebview.setWebViewClient(new CustomWebViewClient());
+        WebSettings webSettings = mywebview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setPluginState(WebSettings.PluginState.ON);
     }
 
     private void centerTitle() {

@@ -1,6 +1,5 @@
 package strokerehab.com.strokerehab;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatTextView;
@@ -17,15 +16,6 @@ public class PatientSignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_sign_up);
         centerTitle();
-
-        findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(PatientSignUpActivity.this, LoginActivity.class));
-                finishAffinity();
-            }
-        });
-
     }
 
     private void centerTitle() {
